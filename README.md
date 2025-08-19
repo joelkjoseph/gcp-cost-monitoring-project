@@ -123,17 +123,17 @@ cat Hello.txt
 📸 Screenshot:
 
 
-Object creation:
+Bucket creation:
 
-<img src="Screenshots/InitialStage.png" height="250">
+<img src="Screenshots/BucketCreation.png" height="250">
 
 IAM:
 
-<img src="Screenshots/InitialStage.png" height="250">
+<img src="Screenshots/IAMprinciple.png" height="250">
 
 File added to bucket:
 
-<img src="Screenshots/InitialStage.png" height="250">
+<img src="Screenshots/FileUpload.png" height="250">
 
 
 
