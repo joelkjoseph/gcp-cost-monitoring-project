@@ -42,7 +42,7 @@ It aligns with **Google Associate Cloud Engineer** skills and directly supports 
 - Billing linked to $300 free credit  
 
 📸 Screenshot:  
-![Project Dashboard](Screenshots/ProjectDashboard.png)
+<img src="Screenshots/ProjectDashboard.png" alt="Project Dashboard" height="300">
 
 ---
 
@@ -52,7 +52,7 @@ It aligns with **Google Associate Cloud Engineer** skills and directly supports 
 - Deployed a Flask app listening on port `8080`  
 
 📸 Screenshot:  
-![Compute Engine VM](Screenshots/ComputeEngineVM.png)
+<img src="Screenshots/ComputeEngineVM.png" alt=" Compute Engine VM" height="300">
 
 ---
 
@@ -61,15 +61,14 @@ It aligns with **Google Associate Cloud Engineer** skills and directly supports 
 - Opened TCP port `8080` to external traffic  
 
 📸 Screenshot:  
-![Firewall Rule](Screenshots/FirewallRule.png)
-)
+<img src="Screenshots/FirewallRule.png" alt="Added a firewall rule" height="300">
 
 ---
 
 ### 4️⃣ Run Flask App
 Flask App Code (`app.py`):
 
-```python
+```python```
 from flask import Flask
 app = Flask(__name__)
 
@@ -86,6 +85,7 @@ if __name__ == "__main__":
 SSH into the VM and run:
 
 Install Flask (if not already installed)
+
 sudo apt update
 sudo apt install -y python3-flask
 
@@ -93,4 +93,48 @@ Start the Flask app using this command
 python3 app.py
 
 📸 Screenshot:
-![Initial Run](Screenshots/InitialStage.png)
+
+<img src="Screenshots/InitialStage.png" alt="Ini" height="250">
+
+---
+
+### 5️⃣ Cloud Storage Integration
+
+- Created a new bucket: `joel-gcp-cost-bucket`
+- Location: Regional (`us-central1`)
+- Storage class: Standard
+- Access control: Uniform
+- Uploaded object: `Hello.txt`
+- Configured IAM: Granted **Storage Object Viewer** role for controlled access
+- Verified access from VM using `gsutil`
+
+#### Commands
+
+```bash```
+##### List bucket contents
+gsutil ls gs://joel-gcp-cost-bucket
+
+##### Copy file from bucket to VM
+gsutil cp gs://joel-gcp-cost-bucket/Hello.txt .
+
+##### Read file contents
+cat Hello.txt
+
+📸 Screenshot:
+
+
+Object creation:
+
+<img src="Screenshots/InitialStage.png" height="250">
+
+IAM:
+
+<img src="Screenshots/InitialStage.png" height="250">
+
+File added to bucket:
+
+<img src="Screenshots/InitialStage.png" height="250">
+
+
+
+
