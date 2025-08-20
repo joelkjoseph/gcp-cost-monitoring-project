@@ -135,6 +135,54 @@ File added to bucket:
 
 <img src="Screenshots/FileUpload.png" height="250">
 
+---
 
+### 6️⃣ Monitoring & Budget Alerts
+
+To ensure service availability and cost control, I configured **Cloud Monitoring** (Stackdriver) and Billing Alerts.
+
+---
+
+#### 🟢 Uptime Check
+- Created an **Uptime Check** for the VM `demo-vm` (port 8080)
+- Checks the Flask app every minute
+- Fails if the app is not reachable
+
+📸 Screenshot:  
+
+- <img src="Screenshots/UptimeCheck.png" height="250">
+
+---
+
+#### 🔔 Alert Policy
+- Configured an **Alert Policy** linked to the Uptime Check
+- Condition: triggers when 1 consecutive check fails
+- Notification Channel: Email (Gmail)
+
+**Steps Taken:**
+1. Go to **Monitoring > Alerting > Create Policy**
+2. Add Condition → Select **Uptime Check**
+3. Add Notification Channel → Email address
+4. Name: `Uptime-Alert-Policy`
+5. Saved and activated policy
+
+📸 Screenshots:  
+-  <img src="Screenshots/Alertpolicy.png" height="250">
+-  <img src="Screenshots/UptimeEmail.png" height="250">
+---
+
+#### 🧪 Failure Test
+- Stopped Flask app on VM:
+bash : 
+pkill -f app.py
+---
+
+#### 💰 Budget Alert
+- Configured a Billing Budget of $5 for this project
+- Alerts trigger at 50% and 100% usage
+- Ensures free credits are not overspent
+
+📸 Screenshot:
+-  <img src="Screenshots/Billing.png" height="250">
 
 
